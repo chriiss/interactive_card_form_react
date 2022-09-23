@@ -1,0 +1,210 @@
+@use "./variables.scss" as var;
+
+@import url(https://fonts.google.com/specimen/Space+Grotesk);
+
+@mixin resetStyle {
+    html, body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Space Grotesk', sans-serif;
+    }
+
+    section {
+        display: flex;
+        justify-content: space-between;
+
+        @media(max-width: var.$breakpoint_tablet) {
+            flex-direction: column;
+        }
+    }
+    .uppercase {
+        text-transform: uppercase;
+    }
+}
+
+
+@mixin bgMainStyle {
+    .bg_main {
+        background-image: url(var.$bg_desktop);
+        background-repeat: none;
+        height: 100vh;
+        width: 33vw;
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+
+        @media(max-width: var.$breakpoint_tablet) {
+            background-image: url(var.$bg_mobile);
+            height: 50%;
+            width: 100%;
+            justify-content: flex-end;
+            align-items: flex-start;
+            flex-direction: column-reverse;
+             z-index: -2;
+        }
+    }
+}
+
+@mixin cardStyle {
+    border-radius: 15px;
+    padding: 2rem;
+    width: 23rem;
+    height: 13rem;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position:center;
+    position: relative;
+    color: var.$primary_color;
+    @media(max-width: var.$breakpoint_tablet) {
+        width: 23rem;
+    }
+    @media(max-width: var.$breakpoint_mobile) {
+        width: 54%;
+    }
+}
+
+
+@mixin frontCardStyle {
+    .front_card {
+        background-image: url(var.$bg_front_card);
+        left: 28%;
+        top: -4rem;
+        @include cardStyle;
+        display: flex;
+        justify-content: flex-start;
+        gap: 3.6rem;
+        align-items: center;
+        flex-direction: column;
+        @media(max-width: var.$breakpoint_tablet) {
+            left: 5%;
+            bottom: 3rem;
+            z-index: 1;
+        }
+        @media(max-width: var.$breakpoint_mobile) {
+            gap: 1.5rem;
+        }
+        .number {
+            font-size: 25px;
+            display: flex;
+            @media(max-width: var.$breakpoint_mobile) {
+                font-size: 15px;
+            }
+        }
+        .svg_flex {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            width: 100%;
+            gap: .9rem;
+            padding-top: .2rem;
+            @media(max-width: var.$breakpoint_mobile) {
+                padding-top: 2.5rem;
+            }
+        }
+        .card_info {
+            display: flex;
+            width: 100%;
+            @media(max-width: var.$breakpoint_mobile) {
+                font-size: 10px;
+            }
+
+            div:nth-child(1) {
+                flex: 1;
+            }
+        }
+    }
+}
+
+@mixin backCardStyle {
+    .back_card {
+        background-image: url(var.$bg_back_card);
+        left: 45%;
+        @include cardStyle;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        @media(max-width: var.$breakpoint_tablet) {
+           left: 23%;
+           top: 5rem;
+           z-index: -1;
+        }
+        &_cvc {
+            color: var.$primary_color;
+            margin-right: 2rem;
+        }
+    }
+}
+
+@mixin formStyle {
+    form {
+        margin: auto;
+        width: 35%;
+        @media(max-width: var.$breakpoint_tablet) {
+          margin-top: 3rem;
+          margin-bottom: 2rem;
+          width: 80%;
+        }
+        .form_group {
+            display: flex;
+            flex-direction: column;
+            margin-top: 20px;
+            gap: 6px;
+            input {
+                height: 30px;
+                width: 100%;
+                padding-left: .2rem;
+            }
+            span {
+                color: var.$error_color;
+            }
+        }
+        .card_d_flex {
+            display: flex;
+            gap: 12px;
+        }
+        input[type="submit"] {
+            margin-top: 2rem;
+            width: 100%;
+            padding: 1rem;
+            font-weight: 600;
+            background-color: var.$second_color;
+            border: none;
+            color: var.$primary_color;
+            cursor: pointer;
+            transition-duration: .75s;
+            &:hover {
+                background-color: var.$second_color_hover;
+                transform:rotateX(360deg);
+            }
+        }
+    }
+}
+
+@mixin confirmStyle{
+    .confirm {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 60%;
+        @media(max-width: var.$breakpoint_tablet) {
+            margin-top: 3rem;
+            width: 100%;
+        }
+        button {
+            background-image: linear-gradient(to right bottom, #110081, #230198, #3401af, #4501c6, #5600de);
+            border: none;
+            padding: .5rem;
+            width: 200px;
+            color: var.$primary_color;
+            cursor: pointer;
+
+            &:hover {
+                background-image: linear-gradient(to right top,#5600de, #4501c6, #3401af,#230198, #110081);
+                transition-duration: .75s;
+            }
+        }
+    }
+}

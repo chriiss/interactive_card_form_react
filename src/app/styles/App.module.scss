@@ -1,0 +1,9 @@
+@use "./mixins.scss" as mixin;
+
+
+@include mixin.resetStyle;
+@include mixin.bgMainStyle;
+@include mixin.frontCardStyle;
+@include mixin.backCardStyle;
+@include mixin.formStyle;
+@include mixin.confirmStyle;

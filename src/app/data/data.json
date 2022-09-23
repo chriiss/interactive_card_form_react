@@ -1,0 +1,24 @@
+{
+    "formComponent": {
+        "label": {
+            "firstName": "cardholder name",
+            "number": "card number",
+            "exp": "Exp.",
+            "date": "Date(MM/YY)",
+            "cvv": "cvv"
+        },
+        "error": {
+            "firstName": "Please Check Name",
+            "number": "Please Check Number",
+            "month": "Please Check Month",
+            "year": "Please Check Year",
+            "cvv": "Please Check Cvv"
+        }
+    },
+
+    "confirmComponent": {
+        "thanks": "Thank you",
+        "details": "We've added your card details",
+        "button_text": "Continue"
+    }
+}
