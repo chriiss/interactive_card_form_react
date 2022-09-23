@@ -1,5 +1,7 @@
 # Getting Started with Create React App
 
+Project link: https://632dd79942ba863280900efe--cerulean-lolly-79202c.netlify.app/
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
